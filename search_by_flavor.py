@@ -20,9 +20,10 @@ for flavor in flavors:
     if query == flavor['flavor_profile']:
         query = flavor['flavor_id']
 
-sql_query = (f'select honey_name, flavors.flavor_profile from honey ' +
+sql_query = (f'select honey_name, flavors.flavor_profile, honey_description from honey ' +
              f'inner join flavors on honey.flavor_profile = flavor_id' +
              f' where flavors.flavor_id = {query}')
+
 # queries DB based on input search string and stores results in a list of Dictionaries
 with connection.cursor() as cursor:
     cursor.execute(sql_query)
