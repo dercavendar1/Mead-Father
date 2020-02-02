@@ -1,9 +1,10 @@
 import pymysql as db
+import getpass
 
 # Innitiates connection to DB
 connection = db.connect(host='192.168.1.210',
                         user='root',
-                        password='#d8K*omZWK%J9b6P',
+                        password=getpass.getpass('What is the DB password? '),
                         database='homebrew_proj',
                         charset='utf8mb4',
                         cursorclass=db.cursors.DictCursor)
