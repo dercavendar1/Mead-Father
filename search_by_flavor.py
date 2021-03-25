@@ -1,5 +1,4 @@
 import getpass
-
 import pymysql as db
 
 # Innitiates connection to DB
@@ -32,7 +31,8 @@ sql_query = ('select distinct honey.honey_name, flavors.flavor_profile ' +
              f'where flavors.flavor_profile = \'{query}\' ' +
              'Order By honey_name; ')
 
-# queries DB based on input search string and stores results in a list of Dictionaries
+# queries DB based on input search string and stores results in a list
+# of Dictionaries
 with connection.cursor() as cursor:
     cursor.execute(sql_query)
     results = cursor.fetchall()
